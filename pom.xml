@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <artifactId>kohlschutter-parent-buildconfig</artifactId>
     <version>1.0.1</version>
@@ -6,11 +8,13 @@
         <groupId>com.kohlschutter</groupId>
         <artifactId>kohlschutter-parent-multirelease</artifactId>
         <version>1.8.3</version>
-        <relativePath>../kohlschutter-parent/kohlschutter-parent-multirelease/pom.xml</relativePath>
+        <relativePath>
+            ../kohlschutter-parent/kohlschutter-parent-multirelease/pom.xml</relativePath>
     </parent>
     <properties>
         <kohlschutter.project.base.directory>${project.basedir}</kohlschutter.project.base.directory>
-        <kohlschutter.project.notice.file>${kohlschutter.project.base.directory}/NOTICE</kohlschutter.project.notice.file>
+        <kohlschutter.project.notice.file>
+            ${kohlschutter.project.base.directory}/NOTICE</kohlschutter.project.notice.file>
         <kohlschutter.multirelease.java8.release>8</kohlschutter.multirelease.java8.release>
         <kohlschutter.multirelease.java.release>15</kohlschutter.multirelease.java.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -18,16 +22,6 @@
         <file.encoding>UTF-8</file.encoding>
         <maven.compile.encoding>UTF-8</maven.compile.encoding>
     </properties>
-    <organization>
-        <name>Kohlschütter Search Intelligence</name>
-        <url>https://www.kohlschutter.com/</url>
-    </organization>
-    <developers>
-        <developer>
-            <name>Christian Kohlschütter</name>
-            <email>christian@kohlschutter.com</email>
-        </developer>
-    </developers>
     <licenses>
         <license>
             <name>Apache License, Version 2.0</name>
@@ -35,51 +29,13 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <site>
-            <id>github.com/kohlschutter/stringhold</id>
-            <url>gitsite:git@github.com/kohlschutter/stringhold.git</url>
-        </site>
-    </distributionManagement>
     <scm>
-        <url>https://github.com/kohlschutter/stringhold</url>
-        <connection>scm:git:https://github.com/kohlschutter/stringhold.git</connection>
-        <developerConnection>scm:git:https://github.com/kohlschutter/stringhold.git</developerConnection>
+        <url>https://github.com/kohlschutter/${project.artifactId}</url>
+        <connection>
+            scm:git:git@github.com:kohlschutter/${project.artifactId}.git</connection>
+        <developerConnection>
+            scm:git:git@github.com:kohlschutter/${project.artifactId}.git</developerConnection>
+        <tag>HEAD</tag>
     </scm>
-    <profiles>
-        <profile>
-            <id>use-snapshots</id>
-            <repositories>
-                <repository>
-                    <id>snapshots-repo</id>
-                    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-                    <releases>
-                        <enabled>false</enabled>
-                    </releases>
-                    <snapshots>
-                        <enabled>true</enabled>
-                    </snapshots>
-                </repository>
-            </repositories>
-        </profile>
-        <profile>
-            <id>use-staging</id>
-            <repositories>
-                <repository>
-                    <id>snapshots-staging</id>
-                    <url>https://oss.sonatype.org/content/groups/staging/</url>
-                    <releases>
-                        <enabled>true</enabled>
-                    </releases>
-                    <snapshots>
-                        <enabled>true</enabled>
-                    </snapshots>
-                </repository>
-            </repositories>
-        </profile>
-    </profiles>
+
 </project>
